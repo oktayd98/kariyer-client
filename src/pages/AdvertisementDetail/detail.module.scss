@@ -1,0 +1,52 @@
+.adDetail {
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr 1.5fr;
+  h3 {
+    margin-bottom: 15px;
+  }
+  .column {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    .row {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      & > *:not(h3) {
+        font-size: 14px;
+        color: #a8a8a8;
+      }
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .company {
+    margin-bottom: 15px;
+    .info {
+      display: flex;
+      .image {
+        width: 65px;
+        img {
+          display: block;
+          width: 100%;
+          border-radius: 8px;
+        }
+      }
+      .detail {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .subDetail {
+          color: #a8a8a8;
+        }
+      }
+    }
+  }
+  .desc {
+    color: #a8a8a8;
+    line-height: 1.7;
+  }
+}

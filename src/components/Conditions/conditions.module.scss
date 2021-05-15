@@ -1,0 +1,22 @@
+.conditions {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  .condition {
+    margin-right: 1rem;
+    .category {
+      color: #a8a8a8;
+    }
+    .limit {
+      &.green {
+        color: #0f0;
+      }
+      &.orange {
+        color: #ecad00;
+      }
+      &.red {
+        color: #f00;
+      }
+    }
+  }
+}

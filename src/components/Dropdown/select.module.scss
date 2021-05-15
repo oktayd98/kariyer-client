@@ -1,9 +1,11 @@
 .inputArea {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  border: 1px solid grey;
+  border: 1px solid #444444;
   border-radius: 5px;
+  height: 3rem;
   .selectedItems {
     display: flex;
     flex-wrap: wrap;
@@ -32,43 +34,52 @@
   }
   .inputContainer {
     flex: 1;
+    display: flex;
+    align-items: center;
+    label {
+      margin-left: 1rem;
+    }
     .input {
       width: 100%;
-      padding: 0.8rem 0 0.8rem 0.5rem;
       background-color: transparent;
       outline: none;
       border: none;
       color: #fff;
     }
   }
-}
-.options {
-  display: flex;
-  flex-direction: column;
-  background-color: #222222;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  max-height: 0;
-  overflow: auto;
-  scrollbar-width: thin;
-  transition: max-height ease-in-out 0.15s;
-  &.active {
-    max-height: 170px;
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
-    border-left: 1px solid grey;
-  }
-  .option {
-    cursor: pointer;
-    padding: 0.5rem;
-    &:not(:last-child) {
-      border-bottom: 1px solid #80808065;
+  .options {
+    position: absolute;
+    z-index: 999;
+    top: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-height: 0;
+    overflow: auto;
+    scrollbar-width: thin;
+    transition: max-height ease-in-out 0.15s;
+    &.active {
+      max-height: 170px;
+      border-right: 1px solid grey;
+      border-bottom: 1px solid grey;
+      border-left: 1px solid grey;
     }
-    &:hover {
-      background-color: #161616;
+    .option {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid #80808065;
+      }
+      &:hover {
+        background-color: #161616;
+      }
     }
   }
 }
+
 .noData {
   cursor: auto;
   color: grey;
